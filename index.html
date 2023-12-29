@@ -1,445 +1,350 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Invitación de Cumpleaños</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Arial', sans-serif;
-    }
-
-    .section1, .section2 {
-      width: 100%;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: #fff; /* Ajustado el color del texto para mejor legibilidad */
-    }
-
-    .section1 {
-      background-image: url('sara.jpeg');
-      background-size: cover;
-      background-position: center;
-    }
-
-    .section1 h1 {
-        font-family: 'Monotype Corsiva', cursive;
-        font-size: 3em;
-    }
-
-    .section1 p {
-      font-family: 'ClockFont', sans-serif;
-      font-size: 1.5em;
-    }
-
-    .section2 {
-      background-image: url('https://www.tuexperto.com/wp-content/uploads/2022/04/fondos-de-pantalla-de-tumblr-1.jpg.webp');
-      background-size: cover;
-      background-position: center;
-      color: #000;
-    }
-
-    .countdown-container {
-      width: 90%; /* Modificado el ancho para mejor adaptación */
-      max-width: 450px; /* Añadido el ancho máximo */
-      height: 80px;
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-      margin-bottom: 20px; /* Añadido margen inferior */
-    }
-
-    .countdown-item {
-      font-size: 1.5em;
-    }
-
-    .countdown-number {
-      font-weight: bold;
-    }
-
-    h1 {
-      font-family: 'Monotype Corsiva', cursive;
-      font-size: 2em;
-      margin-bottom: 10px;
-    }
-
-    .photo {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      height: auto; /* Ajustado para mejor adaptación */
-      margin: 0;
-      flex-wrap: wrap; /* Añadido para que las fotos se envuelvan en pantallas más pequeñas */
-    }
-
-   
-    .photo-container {
-        position: relative;
-        width: 100px;
-        height: 150px; 
-        margin: 20px;
-        border: 1px solid #aeadad;
-        overflow: hidden;
-        background-color: #fff;
-    }
-
-    .photo-container img {
-        padding: 10px;
-        width: 80%;
-        height: auto;
-        max-height: 80%;
-        object-fit: cover;
-        transform-origin: 0 0;
-    }
-
-    .photo-container .text-container {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      background-color: white;
-      text-align: center;
-      padding: 10px;
-    }
-
-    .photo-container.angle-1 {
-      transform: rotate(-10deg);
-    }
-
-    .photo-container.angle-2 {
-      transform: rotate(10deg);
-    }
-
-    .photo-container.angle-3 {
-      transform: rotate(-6deg);
-    }
-    a{
-        font-family: 'Courier New', Courier, monospace;
-        text-decoration: none;
-        color: #3c0058;
-    }
-    .btn {
-  height: 4em;
-  width: 12em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  border: 0px solid black;
-  color: #0761d7;
-}
-
-.wrapper {
-  height: 2em;
-  width: 8em;
-  position: relative;
-  background: transparent;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.text {
-  font-size: 16px;
-  z-index: 1;
-  color: #3c0058;
-  padding: 4px 12px;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.7);
-  transition: all 0.5s ease;
-}
-
-.flower {
-  display: grid;
-  grid-template-columns: 1em 1em;
-  position: absolute;
-  transition: grid-template-columns 0.8s ease;
-}
-
-.flower1 {
-  top: -12px;
-  left: -13px;
-  transform: rotate(5deg);
-}
-
-.flower2 {
-  bottom: -5px;
-  left: 8px;
-  transform: rotate(35deg);
-}
-
-.flower3 {
-  bottom: -15px;
-  transform: rotate(0deg);
-}
-
-.flower4 {
-  top: -14px;
-  transform: rotate(15deg);
-}
-
-.flower5 {
-  right: 11px;
-  top: -3px;
-  transform: rotate(25deg);
-}
-
-.flower6 {
-  right: -15px;
-  bottom: -15px;
-  transform: rotate(30deg);
-}
-
-.petal {
-  height: 1em;
-  width: 1em;
-  border-radius: 40% 70% / 7% 90%;
-  background: linear-gradient(#07a6d7, #93e0ee);
-  border: 0.5px solid #96d1ec;
-  z-index: 0;
-  transition: width 0.8s ease, height 0.8s ease;
-}
-
-.two {
-  transform: rotate(90deg);
-}
-
-.three {
-  transform: rotate(270deg);
-}
-
-.four {
-  transform: rotate(180deg);
-}
-
-.btn:hover .petal {
-  background: linear-gradient(#0761d7, #93bdee);
-  border: 0.5px solid #96b4ec;
-}
-
-.btn:hover .flower {
-  grid-template-columns: 1.5em 1.5em;
-}
-
-.btn:hover .flower .petal {
-  width: 1.5em;
-  height: 1.5em;
-}
-
-.btn:hover .text {
-  background: rgba(255, 255, 255, 0.4);
-}
-
-.btn:hover div.flower1 {
-  animation: 15s linear 0s normal none infinite running flower1;
-}
-
-@keyframes flower1 {
-  0% {
-      transform: rotate(5deg);
-  }
-
-  100% {
-      transform: rotate(365deg);
-  }
-}
-
-.btn:hover div.flower2 {
-  animation: 13s linear 1s normal none infinite running flower2;
-}
-
-@keyframes flower2 {
-  0% {
-      transform: rotate(35deg);
-  }
-
-  100% {
-      transform: rotate(-325deg);
-  }
-}
-
-.btn:hover div.flower3 {
-  animation: 16s linear 1s normal none infinite running flower3;
-}
-
-@keyframes flower3 {
-  0% {
-      transform: rotate(0deg);
-  }
-
-  100% {
-      transform: rotate(360deg);
-  }
-}
-
-.btn:hover div.flower4 {
-  animation: 17s linear 1s normal none infinite running flower4;
-}
-
-@keyframes flower4 {
-  0% {
-      transform: rotate(15deg);
-  }
-
-  100% {
-      transform: rotate(375deg);
-  }
-}
-
-.btn:hover div.flower5 {
-  animation: 20s linear 1s normal none infinite running flower5;
-}
-
-@keyframes flower5 {
-  0% {
-      transform: rotate(25deg);
-  }
-
-  100% {
-      transform: rotate(-335deg);
-  }
-}
-
-.btn:hover div.flower6 {
-  animation: 15s linear 1s normal none infinite running flower6;
-}
-
-@keyframes flower6 {
-  0% {
-      transform: rotate(30deg);
-  }
-
-  100% {
-      transform: rotate(390deg);
-  }
-}
-
-
-  </style>
-</head>
-<body>
-  <section class="section1">
-    <h1>Mis XVIII</h1>
-    <p>13 FEB 24</p>
-  </section>
-  <section class="section2">
-    <h1 style="color: #ffffff;">¡Te Esperamos!</h1>
-    <div class="countdown-container">
-      <div class="countdown-item">
-        <div class="countdown-number" id="days"></div>
-        <div>Días</div>
-      </div>
-      <h2>:</h2>
-      <div class="countdown-item">
-        <div class="countdown-number" id="hours"></div>
-        <div>Horas</div>
-      </div>
-      <h2>:</h2>
-      <div class="countdown-item">
-        <div class="countdown-number" id="minutes"></div>
-        <div>Minutos</div>
-      </div>
-      <h2>:</h2>
-      <div class="countdown-item">
-        <div class="countdown-number" id="seconds"></div>
-        <div>Segundos</div>
-      </div>
-    </div>
-    <div class="photo">
-      <div class="photo-container angle-1 photo-container-horizontal">
-        <img src="sara.jpeg" alt="Foto 1">
-      </div>
-      <div class="photo-container angle-2 photo-container-horizontal">
-        <img src="sara.jpeg" alt="Foto 2">
-      </div>
-      <div class="photo-container angle-3 photo-container-horizontal">
-        <img src="sara.jpeg" alt="Foto 3">
-      </div>
-    </div>
-    <a href="https://api.whatsapp.com/send?phone=4426500955&text=%C2%A1Hola%20Sara!%20%F0%9F%8E%89%20Confirmo%20mi%20asistencia%20para%20tu%20fiesta%20de%2018%20%F0%9F%A5%B3%20%C2%A1Emocionado/a%20de%20celebrar%20contigo!%20Nos%20vemos%20pronto.%20%F0%9F%8E%82%E2%9C%A8%20%20">
-        <button class="btn">
-            <div class="wrapper">
-                <p class="text">Confirmar </p>
-        
-                <div class="flower flower1">
-                    <div class="petal one"></div>
-                    <div class="petal two"></div>
-                    <div class="petal three"></div>
-                    <div class="petal four"></div>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis XVIII</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+    <!-- Favicon -->
+    <link href="img/icon.png" rel="icon">
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600&display=swap" rel="stylesheet"> 
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="theme.css"> 
+    <link rel="stylesheet" type="text/css" href="./icons/css/all.min.css"> 
+    <link href="https://fonts.googleapis.com/css?family=Caveat|Quicksand&display=swap" rel="stylesheet">
+    <link href="css/contador.css" rel="stylesheet">
+    <link href="css/photo.css" rel="stylesheet">
+    <link href="css/boton.css" rel="stylesheet">
+  </head>
+  <body>
+    <audio autoplay loop>
+      <source src="harry.mp3" type="audio/mp3">
+      Tu navegador no soporta el elemento de audio.
+    </audio>    
+      <!-- Carousel Start -->
+      <div class="container-fluid p-0 mb-5 pb-5" id="home">
+        <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item position-relative active" style="height: 100vh; min-height: 400px;">
+                    <img class="position-absolute w-100 h-100" src="sara.jpeg" style="object-fit: cover;">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 900px;">
+                            <h1 class="display-1 font-secondary text-white mt-n3 mb-md-4">Sarahi</h1>
+                            <div class="d-inline-block border-top border-bottom border-light py-3 px-4">
+                                <h3 class="text-uppercase font-weight-normal text-white m-0" style="letter-spacing: 2px;">Festeja conmigo mis 18 años</h3>
+                            </div>
+                            <button type="button" class="btn-play mx-auto" data-toggle="modal"
+                                data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-target="#videoModal">
+                                <span></span>
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <div class="flower flower2">
-                    <div class="petal one"></div>
-                    <div class="petal two"></div>
-                    <div class="petal three"></div>
-                    <div class="petal four"></div>
-                </div>
-                <div class="flower flower3">
-                    <div class="petal one"></div>
-                    <div class="petal two"></div>
-                    <div class="petal three"></div>
-                    <div class="petal four"></div>
-                </div>
-                <div class="flower flower4">
-                    <div class="petal one"></div>
-                    <div class="petal two"></div>
-                    <div class="petal three"></div>
-                    <div class="petal four"></div>
-                </div>
-                <div class="flower flower5">
-                    <div class="petal one"></div>
-                    <div class="petal two"></div>
-                    <div class="petal three"></div>
-                    <div class="petal four"></div>
-                </div>
-                <div class="flower flower6">
-                    <div class="petal one"></div>
-                    <div class="petal two"></div>
-                    <div class="petal three"></div>
-                    <div class="petal four"></div>
+                <div class="carousel-item position-relative" style="height: 100vh; min-height: 400px;">
+                    <img class="position-absolute w-100 h-100" src="img/carousel-2.jpg" style="object-fit: cover;">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 900px;">
+                            <h1 class="display-1 font-secondary text-white mt-n3 mb-md-4">Jack & Rose</h1>
+                            <div class="d-inline-block border-top border-bottom border-light py-3 px-4">
+                                <h3 class="text-uppercase font-weight-normal text-white m-0" style="letter-spacing: 2px;">We're getting married</h3>
+                            </div>
+                            <button type="button" class="btn-play mx-auto" data-toggle="modal"
+                                data-src="https://www.youtube.com/embed/H5v3kku4y6Q?si=VOLrmnLMjJMae1Ub" data-target="#videoModal">
+                                <span></span>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </button>
-    </a>
+            <a class="carousel-control-prev justify-content-start" href="#header-carousel" data-slide="prev">
+                <div class="btn btn-primary px-0" style="width: 68px; height: 68px;">
+                    <span class="carousel-control-prev-icon mt-3"></span>
+                </div>
+            </a>
+            <a class="carousel-control-next justify-content-end" href="#header-carousel" data-slide="next">
+                <div class="btn btn-primary px-0" style="width: 68px; height: 68px;">
+                    <span class="carousel-control-next-icon mt-3"></span>
+                </div>
+            </a>
+        </div>
+    </div>
+    <!-- Video Modal Start -->
+    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-body">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>        
+                  <!-- 16:9 aspect ratio -->
+                  <div class="embed-responsive embed-responsive-16by9">
+                      <iframe class="embed-responsive-item" src="" id="video"  allowscriptaccess="always" allow="autoplay"></iframe>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- Video Modal End -->
+  <div class="contenedor">
+    <a data-scroll class="fixed-button" href="#rsvp" id="rsvpButton"></a> 
+    <section class="section">
+      <h2 class="sub-heading">Overview</h2>
+      <p>Church wedding debt celebrate macarena embarrassing glitter  Will. Forever happy salad  cheers photobooth photographer limousine photobooth photographer limousine prime rib, guitar acoustic bass photobooth photographer limousine sparkles beautiful sparkles guitar acoustic bass beautiful. Cake dessert mother guitar acoustic bass cheers, uncle joe seat covers guitar acoustic bass macarena seat covers cake dessert embarrassing.
+      </p>
+    </section>
+    <section class="section">
+      <h2 class="sub-heading">The Details</h2>
+      <div class="details">
+        <i class="fas fa-calendar-check"></i>
+        <h3 class="details-heading">When</h3>
+        <p>January 1, 2020</p>
+        <a title="Add to Calendar" rel="noopener" href="#" target="_blank" rel="nofollow">Add to Calendar</a>
+      </div>
+      <div class="details">
+        <i class="fas fa-map-marked-alt"></i>
+        <h3 class="details-heading">Location</h3>
+        <p><a rel="noopener" href="#">Grand Venue Place</a>, City, State</p>
+        <img class="resort-image" src="./img/resort.jpeg" alt="Resort" />
+      </div>
+      <div class="details">
+        <i class="fas fa-suitcase"></i>
+        <h3 class="details-heading">Lodging</h3>
+        <p>DJ Jazzy Nupitals guitar acoustic bass embarrassing first aisle guitar acoustic bass cheers glitter . Macarena fish aisle aisle wedding, forever happy salad  drunk groomsman overpriced florist embarrassing coworkers tuxedo aisle guitar acoustic bass champagne bouquet. Ring wedding beautiful tuxedo fish toast, veil Bryna aisle centerpieces. Cheers embarrassing bouquet bouquet Bryna overpriced florist DJ Jazzy Nupitals Bryna macarena. DJ Jazzy Nupitals prime rib centerpieces centerpieces cake dessert, cake dessert tuxedo aisle seat covers aisle.</p>
+        <p>Church Will chicken unity sparkles Bryna cake dessert, centerpieces aisle Will debt guitar acoustic bass glitter . Magic sparkles father bridesmaid  champagne bouquet wedding mother. Magic first dancing fish chicken champagne debt mother guitar acoustic bass.</p>
+      </div>
+      <div class="details">
+        <i class="fas fa-plane-departure"></i>
+        <h3 class="details-heading">Flights</h3>
+        <p>Ring wedding beautiful tuxedo fish toast, veil Bryna aisle centerpieces. Cheers embarrassing bouquet bouquet Bryna overpriced florist DJ Jazzy Nupitals Bryna macarena.</p>
+        <p>Magic sparkles father bridesmaid  champagne bouquet wedding mother. Magic first dancing fish chicken champagne debt mother guitar acoustic bass.</p>
+      </div>
+      <div class="details">
+        <i class="fas fa-asterisk"></i>
+        <h3 class="details-heading">Other Notes</h3>
+        <p>Cake dessert mother guitar acoustic bass cheers, uncle joe seat covers guitar acoustic bass macarena seat covers cake dessert embarrassing.</p>
+        <p>Also, your presence is the only present we desire. No gift required.</p>
+      </div>
+      <div class="details">
+        <i class="fas fa-reply"></i>
+        <h3 class="details-heading" id="rsvp">RSVP</h3>
+        <p>[Embed your RSVP form here]</p>
+        <!-- Include Embedded link of Google Form here in place of # -->
+        <!-- <iframe title="RSVP" src="" style="width:100%;" height="960" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> -->
+      </div>
+    </section>  
+  </div>
+  <br><br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br><br>
+  <br><br><br><br><br>
+  <div class="contador">
+    <section class="section2" style="margin-bottom: 0;">
+      <h1 style="color: #ffffff;">¡Te Esperamos!</h1>
+      <div class="countdown-container">
+        <div class="countdown-item">
+          <div class="countdown-number" id="days"></div>
+          <div>Días</div>
+        </div>
+        <h2>:</h2>
+        <div class="countdown-item">
+          <div class="countdown-number" id="hours"></div>
+          <div>Horas</div>
+        </div>
+        <h2>:</h2>
+        <div class="countdown-item">
+          <div class="countdown-number" id="minutes"></div>
+          <div>Minutos</div>
+        </div>
+        <h2>:</h2>
+        <div class="countdown-item">
+          <div class="countdown-number" id="seconds"></div>
+          <div>Segundos</div>
+        </div>
+      </div>
+      <div class="photo">
+        <div class="photo-container angle-1 photo-container-horizontal">
+          <img src="sara.jpeg" alt="Foto 1">
+        </div>
+        <div class="photo-container angle-2 photo-container-horizontal">
+          <img src="sara.jpeg" alt="Foto 2">
+        </div>
+        <div class="photo-container angle-3 photo-container-horizontal">
+          <img src="sara.jpeg" alt="Foto 3">
+        </div>
+      </div>
+      <a href="https://api.whatsapp.com/send?phone=4426500955&text=%C2%A1Hola%20Sara!%20%F0%9F%8E%89%20Confirmo%20mi%20asistencia%20para%20tu%20fiesta%20de%2018%20%F0%9F%A5%B3%20%C2%A1Emocionado/a%20de%20celebrar%20contigo!%20Nos%20vemos%20pronto.%20%F0%9F%8E%82%E2%9C%A8%20%20">
+          <button class="btn1">
+              <div class="wrapper">
+                  <p class="text">Confirmar </p>
+          
+                  <div class="flower flower1">
+                      <div class="petal one"></div>
+                      <div class="petal two"></div>
+                      <div class="petal three"></div>
+                      <div class="petal four"></div>
+                  </div>
+                  <div class="flower flower2">
+                      <div class="petal one"></div>
+                      <div class="petal two"></div>
+                      <div class="petal three"></div>
+                      <div class="petal four"></div>
+                  </div>
+                  <div class="flower flower3">
+                      <div class="petal one"></div>
+                      <div class="petal two"></div>
+                      <div class="petal three"></div>
+                      <div class="petal four"></div>
+                  </div>
+                  <div class="flower flower4">
+                      <div class="petal one"></div>
+                      <div class="petal two"></div>
+                      <div class="petal three"></div>
+                      <div class="petal four"></div>
+                  </div>
+                  <div class="flower flower5">
+                      <div class="petal one"></div>
+                      <div class="petal two"></div>
+                      <div class="petal three"></div>
+                      <div class="petal four"></div>
+                  </div>
+                  <div class="flower flower6">
+                      <div class="petal one"></div>
+                      <div class="petal two"></div>
+                      <div class="petal three"></div>
+                      <div class="petal four"></div>
+                  </div>
+              </div>
+          </button>
+      </a>
+    </section>  
+  </div>
+  <!-- Gallery Start -->
+    <div class="container-fluid bg-gallery" id="gallery" style="padding: 120px 0; margin: 0;">
+      <div class="section-title position-relative text-center" style="margin-bottom: 120px;">
+          <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">Gallery</h6>
+          <h1 class="font-secondary display-4 text-white">Our Photo Gallery</h1>
+          <i class="far fa-heart text-white"></i>
+      </div>
+      <div class="owl-carousel gallery-carousel">
+          <div class="gallery-item">
+              <img class="img-fluid w-100" src="img/gallery-1.jpg" alt="">
+              <a href="img/gallery-1.jpg" data-lightbox="gallery">
+                  <i class="fa fa-2x fa-plus text-white"></i>
+              </a>
+          </div>
+          <div class="gallery-item">
+              <img class="img-fluid w-100" src="img/gallery-2.jpg" alt="">
+              <a href="img/gallery-2.jpg" data-lightbox="gallery">
+                  <i class="fa fa-2x fa-plus text-white"></i>
+              </a>
+          </div>
+          <div class="gallery-item">
+              <img class="img-fluid w-100" src="img/gallery-3.jpg" alt="">
+              <a href="img/gallery-3.jpg" data-lightbox="gallery">
+                  <i class="fa fa-2x fa-plus text-white"></i>
+              </a>
+          </div>
+          <div class="gallery-item">
+              <img class="img-fluid w-100" src="img/gallery-4.jpg" alt="">
+              <a href="img/gallery-4.jpg" data-lightbox="gallery">
+                  <i class="fa fa-2x fa-plus text-white"></i>
+              </a>
+          </div>
+          <div class="gallery-item">
+              <img class="img-fluid w-100" src="img/gallery-5.jpg" alt="">
+              <a href="img/gallery-5.jpg" data-lightbox="gallery">
+                  <i class="fa fa-2x fa-plus text-white"></i>
+              </a>
+          </div>
+          <div class="gallery-item">
+              <img class="img-fluid w-100" src="img/gallery-6.jpg" alt="">
+              <a href="img/gallery-6.jpg" data-lightbox="gallery">
+                  <i class="fa fa-2x fa-plus text-white"></i>
+              </a>
+          </div>
+      </div>
+  </div>
+  <!-- Gallery End -->  
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        startCountdown();
 
-  </section>
+        function startCountdown() {
+          var countDownDate = new Date("Feb 13, 2024 00:00:00").getTime();
 
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <script>
-    $(document).ready(function() {
-      startCountdown();
+          var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
 
-      function startCountdown() {
-        var countDownDate = new Date("Feb 13, 2024 00:00:00").getTime();
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        var x = setInterval(function() {
-          var now = new Date().getTime();
-          var distance = countDownDate - now;
+            document.getElementById("days").innerHTML = days;
+            document.getElementById("hours").innerHTML = hours;
+            document.getElementById("minutes").innerHTML = minutes;
+            document.getElementById("seconds").innerHTML = seconds;
 
-          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            if (distance < 0) {
+              clearInterval(x);
+              window.location.href = 'agradecimiento.html';
+            }
+          }, 1000);
+        }
+      });
+    </script>
+    <script src="./js/smooth-scroll.polyfills.min.js"></script>
+        <!-- Scroll to Bottom -->
+        <i class="fa fa-2x fa-angle-down text-white scroll-to-bottom"></i>
 
-          document.getElementById("days").innerHTML = days;
-          document.getElementById("hours").innerHTML = hours;
-          document.getElementById("minutes").innerHTML = minutes;
-          document.getElementById("seconds").innerHTML = seconds;
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-outline-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+    
+    
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/isotope/isotope.pkgd.min.js"></script>
+        <script src="lib/lightbox/js/lightbox.min.js"></script>
+    
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+    
+    <script defer>
+      var scroll = new SmoothScroll('a[href*="#"]');
+      var rsvpButton = document.getElementById('rsvpButton')
+      rsvpButton.addEventListener('click',hideButton,false);
 
-          if (distance < 0) {
-            clearInterval(x);
-            // Puedes agregar un mensaje o acción cuando el contador llega a cero
-          }
-        }, 1000);
-      }
-    });
-  </script>
-</body>
+      function hideButton() {
+        rsvpButton.style.display = 'none';
+      }   
+    </script>  
+    <script>
+      alert("¡La música se reproducirá automáticamente!");
+      var audio = new Audio('harry.mp3');
+      audio.loop = true;
+      audio.play();
+    </script>
+    
+  </body>
 </html>
