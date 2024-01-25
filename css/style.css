@@ -9729,7 +9729,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .bg-gallery {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/gallery.jpg), no-repeat center center;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/Photo2/IMG_0776.jpeg), no-repeat center center;
   background-size: cover;
 }
 
@@ -9760,5 +9760,16 @@ a.text-dark:hover, a.text-dark:focus {
 @media (max-width: 767.98px) {
   #event .border-right {
     border-right: none !important;
+  }
+}
+.bg-pan-tr {
+	animation: bg-pan-tr 8s infinite both;
+}
+ @keyframes bg-pan-tr {
+  0% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 100% 0%;
   }
 }
