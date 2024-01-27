@@ -1,7 +1,8 @@
 .contenedor{
     margin: 0;
-    height: 100vh;
+    height: 70%;
     text-align: center;
+    background-image: radial-gradient(circle, #ff0d0d 5%, #ba3bff 95%);
 }
 .fixed-button{
     background: rgba(20,20,20,.5);
