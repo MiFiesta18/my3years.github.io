@@ -1,9 +1,22 @@
-.contenedor{
+:root {
+    --dark-color: #85deff;
+}
+
+.contenedor {
     margin: 0;
     height: 70%;
     text-align: center;
-    background-image: radial-gradient(circle, #ff0d0d 5%, #ba3bff 95%);
-}
+    filter: blur(0.1vmin);
+    background-image: radial-gradient(ellipse at top, transparent 0%, var(--dark-color)), 
+    radial-gradient(ellipse at bottom, var(--dark-color), rgba(145, 233, 255, 0.2)), 
+    repeating-linear-gradient(220deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, transparent 19px, 
+    transparent 22px), repeating-linear-gradient(189deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, 
+    transparent 19px, transparent 22px), repeating-linear-gradient(148deg, rgb(0, 0, 0) 0px, 
+    rgb(5, 0, 68) 19px, transparent 19px, transparent 22px), linear-gradient(90deg, rgb(4, 0, 255), 
+    rgb(240, 240, 240));
+  }
+
+
 .fixed-button{
     background: rgba(20,20,20,.5);
     border-radius: 1em;
