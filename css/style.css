@@ -9588,7 +9588,7 @@ a.text-dark:hover, a.text-dark:focus {
   display: block;
   width: 60px;
   height: 60px;
-  background: #FFFFFF;
+  background: yellow;
   border-radius: 100%;
   animation: pulse-border 1500ms ease-out infinite;
 }
@@ -9615,7 +9615,7 @@ a.text-dark:hover, a.text-dark:focus {
   width: 0;
   height: 0;
   left: -1px;
-  border-left: 16px solid #E47A2E;
+  border-left: 16px solid #00ffc4;
   border-top: 11px solid transparent;
   border-bottom: 11px solid transparent;
 }

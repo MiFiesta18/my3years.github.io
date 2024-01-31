@@ -2,9 +2,9 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: auto; /* Ajustado para mejor adaptación */
+    height: auto; 
     margin: 0;
-    flex-wrap: wrap; /* Añadido para que las fotos se envuelvan en pantallas más pequeñas */
+    flex-wrap: wrap; 
   }
 
  
