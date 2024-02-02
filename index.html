@@ -338,12 +338,16 @@
       }   
     </script>  
     <script>
+      var audio;  
       function repro() {
-        var audio = new Audio('harry.mp3');
-      audio.loop = true;
-      audio.play();
-      }   
-      
+        if (!audio || audio.paused) {
+          audio = new Audio('love.mp3');
+          audio.loop = true;
+          audio.play();
+        } else {
+          audio.currentTime = 0;
+        }
+      }
     </script>
     
   </body>
