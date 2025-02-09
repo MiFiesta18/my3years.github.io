@@ -1,25 +1,50 @@
-@import url();
-*{
+@import url('https://fonts.googleapis.com/css2?family=Georgia&display=swap');
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
-section{
-    height: 400vh;
-    overflow: hidden;
-   background: rgb(0, 0, 0);
+
+section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+    padding: 20px;
 }
-p{
-    position: relative;
+
+p {
+    max-width: 90%;
     font-size: 1.5em;
-    letter-spacing: -0.05em;
-    line-height: 0.7em;
-    background: url(png-transparent-balloon-heart-graphy-love-background-love-heart-balloon-thumbnail-removebg-preview.png),url(png-transparent-balloon-heart-graphy-love-background-love-heart-balloon-thumbnail-removebg-preview.png);
-    background-blend-mode:color-dodge;
+    letter-spacing: -0.02em;
+    line-height: 1.5em;
+    text-align: center;
+    background: url('png-transparent-balloon-heart-graphy-love-background-love-heart-balloon-thumbnail-removebg-preview.png'),
+                url('png-transparent-balloon-heart-graphy-love-background-love-heart-balloon-thumbnail-removebg-preview.png');
+    background-blend-mode: color-dodge;
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
     -webkit-background-clip: text;
     color: transparent;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    p {
+        font-size: 1.2em;
+        max-width: 95%;
+        line-height: 1.4em;
+    }
+}
+
+@media (max-width: 480px) {
+    p {
+        font-size: 1em;
+        line-height: 1.3em;
+        padding: 10px;
+    }
 }
