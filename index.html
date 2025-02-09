@@ -1,82 +1,98 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¿Quieres comprarme dulces?</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: url('https://gifs.org.es/gifs/2013/09/candy-gifs.gif') no-repeat center center fixed;
-            background-size: cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            font-family: 'Arial', sans-serif;
-        }
-
-        .container {
-            text-align: center;
-            background: rgba(255, 255, 255, 0.8);
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        h1 {
-            color: #e91e63;
-            font-size: 2.5rem;
-        }
-
-        .buttons {
-            margin-top: 20px;
-        }
-
-        .btn {
-            padding: 15px 30px;
-            font-size: 1.2rem;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .btn-yes {
-            background-color: #4caf50;
-            color: white;
-        }
-
-        .btn-yes:hover {
-            background-color: #388e3c;
-        }
-
-        .btn-no {
-            background-color: #f44336;
-            color: white;
-            position: absolute;
-        }
-    </style>
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>¿Quieres comprarme dulces?</h1>
-        <div class="buttons">
-            <button class="btn btn-yes" onclick="window.location.href=''">Sí</button>
-            <button class="btn btn-no" id="noBtn">No</button>
-        </div>
-    </div>
+    <section>
+        <p>
+            Estar enamorado, amigos, es encontrar
+el nombre justo a la vida.
+Es dar al fin con las palabras que para hacer
+frente a la muerte se precisa.
+Es recobrar la llave oculta que abre la cárcel
+en que el alma está cautiva.
+Es levantarse de la tierra con una fuerza que
+reclama desde arriba.
+Es respirar el ancho viento que por encima de
+la carne respira.
+Es contemplar, desde la cumbre de la persona,
+la razón de las heridas.
+Es advertir en unos ojos una mirada verdadera
+que nos mira.
+Es escuchar en una boca la propia voz
+profundamente repetida.
+Es sorprender en unas manos ese calor de la
+perfecta compañía.
+Es sospechar que, para siempre, la soledad
+de nuestra sombra está vencida.
 
-    <script>
-        const noBtn = document.getElementById('noBtn');
+Estar enamorado amigos, es descubrir dónde
+se juntan cuerpo y alma.
+Es percibir en el desierto la cristalina voz de
+un río que nos llama.
+Es ver el mar desde la torre donde ha quedado
+prisionera nuestra infancia.
+Es apoyar los ojos tristes en un paisaje de
+cigüeñas y campanas.
+Es ocupar un territorio donde conviven los
+perfumes y las armas.
+Es dar la ley a cada rosa y al mismo tiempo
+recibirla de su espada.
+Es confundir el sentimiento con una hoguera
+que del pecho se levanta.
+Es gobernar la luz del fuego y al mismo tiempo
+ser esclavo de la llama.
+Es entender la pensativa conversación del
+corazón y la distancia.
+Es encontrar el derrotero que lleva al reino de
+la música sin tasa.
 
-        noBtn.addEventListener('mouseover', () => {
-            const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
-            const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
-            noBtn.style.left = `${x}px`;
-            noBtn.style.top = `${y}px`;
-        });
-    </script>
+Estar enamorado, amigos, es adueñarse de
+las noches y los días.
+Es olvidar entre los dedos emocionados la
+cabeza distraída.
+Es recordar a Garcilazo cuando se siente la
+canción de una herrería.
+Es ir leyendo lo que escriben en el espacio las
+primeras golondrinas.
+Es ver la estrella de la tarde por la ventana de
+una casa campesina.
+Es contemplar un tren que pasa por la montaña
+con las luces encendidas.
+Es comprender perfectamente que no hay
+fronteras entre el sueño y la vigilia.
+Es ignorar en qué consiste la diferencia entre
+la pena y la alegría.
+Es escuchar a medianoche la vagabunda
+confesión de la llovizna.
+Es divisar en las tinieblas del corazón una
+pequeña lucecita.
+
+Estar enamorado, amigos, es padecer espacio
+y tiempo con dulzura.
+Es despertarse una mañana con el secreto de
+las flores y las frutas.
+Es libertarse de sí mismo y estar unido con
+las otras criaturas.
+Es no saber si son ajenas o son propias las
+lejanas amarguras.
+Es remontar hasta la fuente las aguas turbias
+del torrente de la angustia.
+Es compartir la luz del mundo y al mismo
+tiempo compartir su noche obscura.
+Es asombrarse y alegrarse de que la luna
+todavía sea luna.
+Es comprobar en cuerpo y alma que la tarea
+de ser hombre es menos dura.
+Es empezar a decir siempre, y en adelante no
+volver a decir nunca.
+Y es, además, amigos míos, estar seguro de
+tener las manos puras.
+        </p>
+    </section>
 </body>
 </html>
