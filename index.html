@@ -1,33 +1,38 @@
 <!DOCTYPE html>
-<html lang="es" >
+<html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title> Happy birthday Card</title>
+  <title>Happy Birthday Card</title>
   <link rel="stylesheet" href="./style.css">
-
 </head>
 <body>
 
-<div class="card">
-		<div class="imgBox">
-			<div class="bark"></div>
-			<img src="White Script Horse Photo.png">
-		</div>
-		<div class="details">
-			<h4 class="color1">primer mesnaje!</h2>
-			<h4 class="color2 margin">(HAPPY BIRTHDAY)</h3>
-			<p>mensaje,</p>
-			<p>mensaje</p>
-			<p>mensaje</p>
-			<p>mensaje</p>
-			<p>mensaje</p>
-			<p>mensaje</p>
-			<p>mensaje</p>
-			<p>mensaje :)</p>
-			<p class="text-right">Happy Birthday</p>
-			<p class="text-right">♥KODE</p>
-		</div>
-	</div>
+<div class="card" id="card">
+  <div class="imgBox">
+    <div class="bark"></div>
+    <img src="White Script Horse Photo.png">
+  </div>
+  <div class="details">
+    <h4 class="color1">primer mensaje!</h4>
+    <h4 class="color2 margin">(HAPPY BIRTHDAY)</h4>
+    <p>mensaje,</p>
+    <p>mensaje</p>
+    <p>mensaje</p>
+    <p>mensaje</p>
+    <p>mensaje</p>
+    <p>mensaje</p>
+    <p>mensaje</p>
+    <p>mensaje :)</p>
+    <p class="text-right">Happy Birthday</p>
+    <p class="text-right">♥KODE</p>
+  </div>
+</div>
+
+<script>
+  document.getElementById("card").addEventListener("click", function() {
+    this.classList.toggle("open");
+  });
+</script>
 
 </body>
 </html>
