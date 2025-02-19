@@ -2,37 +2,36 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Happy Birthday Card</title>
-  <link rel="stylesheet" href="./style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitación de Mateo Daniel</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="card" id="card">
-  <div class="imgBox">
-    <div class="bark"></div>
-    <img src="White Script Horse Photo.png">
+  <div class="card" onclick="toggleCard()">
+    <div class="imgBox">
+      <img src="birthday-image.png" alt="Cumpleaños de Mateo Daniel">
+    </div>
+    <div class="details">
+      <h4 class="color1">¡Estás invitado!</h4>
+      <h4 class="color2">🎉 Mateo Daniel cumple 3 años 🎂</h4>
+      
+      <p>🎈 <strong>Fecha:</strong> 8 de marzo</p>
+      <p>⏰ <strong>Hora:</strong> 5:00 PM</p>
+      <p>📍 <strong>Lugar:</strong> Calle Azucenas, Ajuchitlancito</p>
+	  <p>, Pedro Escobedo.</p>
+	  <br>
+      <p class="message">Ven a celebrar con nosotros y diviértete</p>
+	  <p class="message"> en esta fiesta especial. 🥳</p>
+      <p class="text-right">¡Te esperamos! 🎁🎊</p>
+    </div>
   </div>
-  <div class="details">
-    <h4 class="color1">primer mensaje!</h4>
-    <h4 class="color2 margin">(HAPPY BIRTHDAY)</h4>
-    <p>mensaje,</p>
-    <p>mensaje</p>
-    <p>mensaje</p>
-    <p>mensaje</p>
-    <p>mensaje</p>
-    <p>mensaje</p>
-    <p>mensaje</p>
-    <p>mensaje :)</p>
-    <p class="text-right">Happy Birthday</p>
-    <p class="text-right">♥KODE</p>
-  </div>
-</div>
 
-<script>
-  document.getElementById("card").addEventListener("click", function() {
-    this.classList.toggle("open");
-  });
-</script>
+  <script>
+    function toggleCard() {
+      document.querySelector(".card").classList.toggle("open");
+    }
+  </script>
 
 </body>
 </html>
